@@ -14,6 +14,7 @@ Le challenge de 2020 est celui sur lequel se base ce projet. Le dataset de cette
   * Inde : 7 706
   * Japon : 10 506
   * Tchéquie : 2 829
+ 
  L'édition 2022 a vu le dataset s'étoffer considérablement avec maintenant dans les données d'entrainement : 
   * Chine : 3500
   * Inde : 9000
