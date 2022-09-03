@@ -15,13 +15,7 @@ Le challenge de 2020 est celui sur lequel se base ce projet. Le dataset de cette
   * Japon : 10 506
   * Tchéquie : 2 829
  
- L'édition 2022 a vu le dataset s'étoffer considérablement avec maintenant dans les données d'entrainement : 
-  * Chine : 3500
-  * Inde : 9000
-  * Japon : 10000
-  * Norvège : 9000
-  * Tchéquie : 2000
-  * USA : 5000
+L'édition 2022 a vu le dataset s'étoffer considérablement avec maintenant dans les données d'entrainement : Chine (3500), Inde (9000), Japon (10000), Norvège (9000), Tchéquie (2000) et USA (5000).
 
 Les photos fournies par les organisateurs du challenge sont toutes labellisées via un fichier annotations qui contient pour chaque photo les coordonnées des bounding box (les carrés qui localisent les défauts dans la photo) et la catégorie de défaut associé à chaque bounding box. 
 
