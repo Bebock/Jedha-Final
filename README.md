@@ -26,7 +26,7 @@ Le challenge de 2020 est celui sur lequel se base ce projet. Le dataset de cette
 Les photos fournies par les organisateurs du challenge sont toutes labellisées via un fichier annotations qui contient pour chaque photo les coordonnées des bounding box (les carrés qui localisent les défauts dans la photo) et la catégorie de défaut associé à chaque bounding box. 
 
 En 2020, différents types de défauts sont annotés, de façon différente selon le pays, en différentes catégories : 
-![image](https://user-images.githubusercontent.com/38078432/188277168-9b5d8833-3350-4daa-b150-cc9e346089dc.png)
+![image](https://user-images.githubusercontent.com/38078432/188277730-ae96420d-8f98-4f05-94ae-cd2d97e11713.png)
 
 ----
 
@@ -53,6 +53,14 @@ Néanmoins, en vue d'appliquer cet algorithme à une problématique métier spé
 ## 4. Overview des principaux résultats 
 
 ### Analyse descriptive exploratoire
+
+Les défauts sont annotés de manière différentielle entre les 3 pays puisque la Tchéquie n'a annoté que les 4 principaux types de défauts concernés par le challenge, le Japon a annoté 7 types de défauts et l'Inde a annoté tous les types de défauts. 
+
+Les défauts "annexes" sont donc moins bien annotés que les 4 défauts principaux, il y a donc dans les photos d'apprentissage plus d'erreurs, de "bruit" pour les catégories annexes, ce qui laisser supposer que nous aurons de moins bonnes performances sur ces catégories que sur les catégories principales, annotés correctement sur toutes les photos. 
+
+Cette annotation différentielle génère une répartition du nombre de défauts 
+
+
 
 ### Yolov5
 
