@@ -32,13 +32,16 @@ En 2020, différents types de défauts sont annotés, de façon différente selo
 
 ## 2. Objectifs
 
-Le challenge a pour vocation première la détection de 4 principales catégories : 
-  * D00
-  * D10
-  * D20
-  * D40
+Le challenge a pour vocation première la détection de 4 principales catégories : D00, D10, D20, D40.
 
-Néanmoins, en vue d'appliquer cet algorithme à une problématique métier spécifique, nous avons considéré 7 catégories de défauts donc les regroupements sont indiqués par le code couleur dans la table ci-dessus. 
+Néanmoins, en vue d'appliquer cet algorithme à une problématique métier spécifique, nous avons considéré 7 catégories de défauts donc les regroupements sont indiqués par le code couleur dans la table ci-dessus :
+  * Fissures linéaires longitudinales : D00 + D01
+  * Fissures linéaires latérales : D10 + D11
+  * Fissures de type alligator : D20
+  * Nids-de-poules, bosses, ornières : D40
+  * Lignes blanches ou jaunes dont passages piétons : D43 + D44
+  * Bouches d'égout : D50
+  * Autres : D0w0
 
 ----
 
