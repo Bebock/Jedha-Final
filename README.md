@@ -45,13 +45,18 @@ Néanmoins, en vue d'appliquer cet algorithme à une problématique métier spé
 
 ### Pré-requis
 
-L'EDA peut aisément se faire avec Visual Studio Code comme avec Google Colab. Néanmoins, YoloV5 nécessite une grosse capacité de calcul. Pour notre part, nous avons opté pour un abonnement d'un mois à Google Colab Pro pour bénéficier des GPU qu'offrent ce système. L'abonnement n'est pas indispensable, mais le calcul est très long et peut couper après une trop longue période perçue comme inactive. 
+Les notebooks ont été développés avec Google Colab et gèrent les données en ligne via Google Drive. Il convient donc d'avoir un compte actif. 
+
+YoloV5 nécessite une grosse capacité de calcul. Pour notre part, nous avons opté pour un abonnement d'un mois à Google Colab Pro pour bénéficier des GPU supplémentaires qu'offre ce système. L'abonnement n'est pas indispensable, mais le calcul est très long et peut couper après une trop longue période perçue comme inactive. 
+
+L'outil Wandb n'est pas indispensable mais offre une visualisation très ergonomique de l'évolution des epochs et des performances des différents modèles entrainés. 
 
 ### Fichiers 
 
 Le notebook Part 1 - EDA.ipynb permet de visualiser les données brutes (images et annotations) ainsi qu'une première EDA. 
 Le notebook Part 2 - Yolov5.ipynb 
 Le notebook Part 3 - Deployment.ipynb 
+
 ----
 
 ## 4. Overview des principaux résultats 
@@ -72,9 +77,11 @@ Les défauts "annexes" sont donc moins bien annotés que les 4 défauts principa
 
 ### Outils
 
-Les notebooks ont été développés avec [Visual Studio Code](https://code.visualstudio.com/) et [Google Colab](https://colab.research.google.com/). 
+Les notebooks ont été développés avec [Google Colab](https://colab.research.google.com/). 
 
 YoloV5 est disponible [ici](https://github.com/ultralytics/yolov5) et YoloV7 [ici](https://github.com/WongKinYiu/yolov7). 
+
+Wandb est disponible [ici](https://wandb.ai/site).
 
 ### Auteurs & contributeurs
 
