@@ -53,9 +53,9 @@ L'outil Wandb n'est pas indispensable mais offre une visualisation très ergonom
 
 ### Fichiers 
 
-Le notebook Part 1 - EDA.ipynb permet de visualiser les données brutes (images et annotations) ainsi qu'une première EDA. 
-Le notebook Part 2 - Yolov5.ipynb nécessite d'avoir effectuer l'import des données présent dans le notebook 1 (données présentes dans le Drive)
-Le notebook Part 3 - Deployment.ipynb 
+  * Le notebook *Part 1 - EDA.ipynb* permet de visualiser les données brutes (images et annotations) ainsi qu'une première EDA. 
+  * Le notebook *Part 2 - Yolov5.ipynb* nécessite d'avoir effectué l'import des données présent dans le notebook 1 (données chargées dans le Drive)
+  * Le notebook *Part 3 - Deployment.ipynb* 
 
 ----
 
