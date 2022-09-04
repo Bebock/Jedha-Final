@@ -19,6 +19,8 @@ L'édition 2022 a vu le dataset s'étoffer considérablement avec maintenant dan
 
 Les photos fournies par les organisateurs du challenge sont toutes labellisées via un fichier annotations qui contient pour chaque photo les coordonnées des bounding box (les carrés qui localisent les défauts dans la photo) et la catégorie de défaut associé à chaque bounding box. 
 
+![image](https://user-images.githubusercontent.com/38078432/188320042-d89043f7-b5d1-4d92-b277-44defd81ccdb.png)
+
 En 2020, différents types de défauts sont annotés, de façon différente selon le pays, en différentes catégories : 
 ![image](https://user-images.githubusercontent.com/38078432/188277730-ae96420d-8f98-4f05-94ae-cd2d97e11713.png)
 
@@ -43,8 +45,13 @@ Néanmoins, en vue d'appliquer cet algorithme à une problématique métier spé
 
 ### Pré-requis
 
+L'EDA peut aisément se faire avec Visual Studio Code comme avec Google Colab. Néanmoins, YoloV5 nécessite une grosse capacité de calcul. Pour notre part, nous avons opté pour un abonnement d'un mois à Google Colab Pro pour bénéficier des GPU qu'offrent ce système. L'abonnement n'est pas indispensable, mais le calcul est très long et peut couper après une trop longue période perçue comme inactive. 
+
 ### Fichiers 
 
+Le notebook Part 1 - EDA.ipynb permet de visualiser les données brutes (images et annotations) ainsi qu'une première EDA. 
+Le notebook Part 2 - Yolov5.ipynb 
+Le notebook Part 3 - Deployment.ipynb 
 ----
 
 ## 4. Overview des principaux résultats 
@@ -53,11 +60,9 @@ Néanmoins, en vue d'appliquer cet algorithme à une problématique métier spé
 
 Les défauts sont annotés de manière différentielle entre les 3 pays puisque la Tchéquie n'a annoté que les 4 principaux types de défauts concernés par le challenge, le Japon a annoté 7 types de défauts et l'Inde a annoté tous les types de défauts. 
 
+![image](https://user-images.githubusercontent.com/38078432/188320253-9079e0d3-d1bb-4b5c-a440-097317b2aa4c.png)
+
 Les défauts "annexes" sont donc moins bien annotés que les 4 défauts principaux, il y a donc dans les photos d'apprentissage plus d'erreurs, de "bruit" pour les catégories annexes, ce qui laisser supposer que nous aurons de moins bonnes performances sur ces catégories que sur les catégories principales, annotés correctement sur toutes les photos. 
-
-Cette annotation différentielle génère une répartition du nombre de défauts 
-
-
 
 ### Yolov5
 
