@@ -19,6 +19,8 @@ L'édition 2022 a vu le dataset s'étoffer considérablement avec maintenant dan
 
 Les photos fournies par les organisateurs du challenge sont toutes labellisées via un fichier annotations qui contient pour chaque photo les coordonnées des bounding box (les carrés qui localisent les défauts dans la photo) et la catégorie de défaut associé à chaque bounding box. 
 
+![image](https://user-images.githubusercontent.com/38078432/188320042-d89043f7-b5d1-4d92-b277-44defd81ccdb.png)
+
 En 2020, différents types de défauts sont annotés, de façon différente selon le pays, en différentes catégories : 
 ![image](https://user-images.githubusercontent.com/38078432/188277730-ae96420d-8f98-4f05-94ae-cd2d97e11713.png)
 
@@ -43,7 +45,17 @@ Néanmoins, en vue d'appliquer cet algorithme à une problématique métier spé
 
 ### Pré-requis
 
+Les notebooks ont été développés avec Google Colab et gèrent les données en ligne via Google Drive. Il convient donc d'avoir un compte actif. 
+
+YoloV5 nécessite une grosse capacité de calcul. Pour ma part, j'ai opté pour un abonnement à Google Colab Pro pour bénéficier des GPU / RAM supplémentaires qu'offre ce système. Selon la puissance de votre ordinateur, l'abonnement peut ne pas être indispensable, mais le calcul est très long et peut couper après une trop longue période perçue comme inactive. 
+
+L'outil Wandb n'est pas indispensable mais offre une visualisation très ergonomique de l'évolution des epochs et des performances des différents modèles entrainés. 
+
 ### Fichiers 
+
+  * Le notebook *Part 1 - EDA.ipynb* permet de visualiser les données brutes (images et annotations) ainsi qu'une première EDA. 
+  * Le notebook *Part 2 - Yolov5.ipynb* formatte les données pour l'utilisation de YoloV5 et permet d'entrainer le modèle
+  * Le notebook *Part 3 - Deployment.ipynb* se base sur le meilleur modèle choisi par l'utilisateur et le déploie grâce à outil en ligne qui permet à l'utilisateur de charger une photo sur laquelle il souhaite détecter les défauts.
 
 ----
 
@@ -53,13 +65,27 @@ Néanmoins, en vue d'appliquer cet algorithme à une problématique métier spé
 
 Les défauts sont annotés de manière différentielle entre les 3 pays puisque la Tchéquie n'a annoté que les 4 principaux types de défauts concernés par le challenge, le Japon a annoté 7 types de défauts et l'Inde a annoté tous les types de défauts. 
 
+![image](https://user-images.githubusercontent.com/38078432/188320253-9079e0d3-d1bb-4b5c-a440-097317b2aa4c.png)
+
 Les défauts "annexes" sont donc moins bien annotés que les 4 défauts principaux, il y a donc dans les photos d'apprentissage plus d'erreurs, de "bruit" pour les catégories annexes, ce qui laisser supposer que nous aurons de moins bonnes performances sur ces catégories que sur les catégories principales, annotés correctement sur toutes les photos. 
 
-Cette annotation différentielle génère une répartition du nombre de défauts 
-
-
-
 ### Yolov5
+
+Yolo (You Only Look Once) est un des outils de détection d'objets les plus populaires grâce à sa précision, la possibilité d'utilisation en temps réel et sa simplicité d'utilisation. L'algorithme utilise un Convolutional Neural Network (CNN) pré-entraîné et ré-entraînable qui traite l'image en une seule fois, en la découpant en plusieurs parties et en prédisant des bounding box (localisation de l'objet cherché dans l'image) et leur probabilité. 
+
+L'évaluation des performances du modèle peut se faire sur différentes métriques, notamment le F1-score et la mAP (mean Average Precision), métrique spécifique aux modèles de détection. Pour comparer différents modèles (différentes paramétrisations de YoloV5), Wandb est une interface très agréable :  
+
+![image](https://user-images.githubusercontent.com/38078432/188439802-478dd008-e62b-4cdf-b36c-3c70e3e6bad1.png)
+
+Le modèle choisi ici a des performances relativement intéressantes, d'autant plus que, rappelons le, nous entrainons un modèle à détecter des défauts non annotés dans toutes les images d'entrainement :
+
+![image](https://user-images.githubusercontent.com/38078432/188442882-bc05e8fe-79ea-4000-b288-4a835362731a.png)
+
+### Déploiement 
+
+Pour finir, nous proposons d'utiliser le modèle choisi pour détecter des défauts de route sur de nouvelles photos sélectionnées par l'utilisateur. Pour cela, nous avons utilisé Gradio : 
+
+![image](https://user-images.githubusercontent.com/38078432/188445700-8c36c831-6cf5-4441-9d88-33a2af796fc4.png)
 
 ----
 
@@ -67,9 +93,10 @@ Cette annotation différentielle génère une répartition du nombre de défauts
 
 ### Outils
 
-Les notebooks ont été développés avec [Visual Studio Code](https://code.visualstudio.com/) et [Google Colab](https://colab.research.google.com/). 
-
-YoloV5 est disponible [ici](https://github.com/ultralytics/yolov5) et YoloV7 [ici](https://github.com/WongKinYiu/yolov7). 
+  * Les notebooks ont été développés avec [Google Colab](https://colab.research.google.com/). 
+  * YoloV5 est disponible [ici](https://github.com/ultralytics/yolov5) et YoloV7 [ici](https://github.com/WongKinYiu/yolov7).
+  * Wandb est disponible [ici](https://wandb.ai/site).
+  * L'information sur Gradio est disponible [ici](https://gradio.app/).
 
 ### Auteurs & contributeurs
 
@@ -84,4 +111,5 @@ La dream team :
 ### Sites sources des données
 
 [Road Damage Detection Challenge 2020](https://rdd2020.sekilab.global/)
+
 [Crowdsensing-Based Road Damage Detection Challenge 2022](https://crddc2022.sekilab.global/)
