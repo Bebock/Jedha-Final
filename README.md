@@ -93,13 +93,10 @@ Pour finir, nous proposons d'utiliser le modèle choisi pour détecter des défa
 
 ### Outils
 
-Les notebooks ont été développés avec [Google Colab](https://colab.research.google.com/). 
-
-YoloV5 est disponible [ici](https://github.com/ultralytics/yolov5) et YoloV7 [ici](https://github.com/WongKinYiu/yolov7). 
-
-Wandb est disponible [ici](https://wandb.ai/site).
-
-L'information sur Gradio est disponible [ici](https://gradio.app/).
+  * Les notebooks ont été développés avec [Google Colab](https://colab.research.google.com/). 
+  * YoloV5 est disponible [ici](https://github.com/ultralytics/yolov5) et YoloV7 [ici](https://github.com/WongKinYiu/yolov7).
+  * Wandb est disponible [ici](https://wandb.ai/site).
+  * L'information sur Gradio est disponible [ici](https://gradio.app/).
 
 ### Auteurs & contributeurs
 
@@ -114,4 +111,5 @@ La dream team :
 ### Sites sources des données
 
 [Road Damage Detection Challenge 2020](https://rdd2020.sekilab.global/)
+
 [Crowdsensing-Based Road Damage Detection Challenge 2022](https://crddc2022.sekilab.global/)
