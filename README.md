@@ -47,15 +47,15 @@ Néanmoins, en vue d'appliquer cet algorithme à une problématique métier spé
 
 Les notebooks ont été développés avec Google Colab et gèrent les données en ligne via Google Drive. Il convient donc d'avoir un compte actif. 
 
-YoloV5 nécessite une grosse capacité de calcul. Pour notre part, nous avons opté pour un abonnement d'un mois à Google Colab Pro pour bénéficier des GPU supplémentaires qu'offre ce système. L'abonnement n'est pas indispensable, mais le calcul est très long et peut couper après une trop longue période perçue comme inactive. 
+YoloV5 nécessite une grosse capacité de calcul. Pour ma part, j'ai opté pour un abonnement à Google Colab Pro pour bénéficier des GPU / RAM supplémentaires qu'offre ce système. Selon la puissance de votre ordinateur, l'abonnement peut ne pas être indispensable, mais le calcul est très long et peut couper après une trop longue période perçue comme inactive. 
 
 L'outil Wandb n'est pas indispensable mais offre une visualisation très ergonomique de l'évolution des epochs et des performances des différents modèles entrainés. 
 
 ### Fichiers 
 
   * Le notebook *Part 1 - EDA.ipynb* permet de visualiser les données brutes (images et annotations) ainsi qu'une première EDA. 
-  * Le notebook *Part 2 - Yolov5.ipynb* nécessite d'avoir effectué l'import des données présent dans le notebook 1 (données chargées dans le Drive)
-  * Le notebook *Part 3 - Deployment.ipynb* 
+  * Le notebook *Part 2 - Yolov5.ipynb* formatte les données pour l'utilisation de YoloV5 et permet d'entrainer le modèle
+  * Le notebook *Part 3 - Deployment.ipynb* se base sur le meilleur modèle choisi par l'utilisateur et le déploie grâce à outil en ligne qui permet à l'utilisateur de charger une photo sur laquelle il souhaite détecter les défauts.
 
 ----
 
@@ -71,6 +71,22 @@ Les défauts "annexes" sont donc moins bien annotés que les 4 défauts principa
 
 ### Yolov5
 
+Yolo (You Only Look Once) est un des outils de détection d'objets les plus populaires grâce à sa précision, la possibilité d'utilisation en temps réel et sa simplicité d'utilisation. L'algorithme utilise un Convolutional Neural Network (CNN) pré-entraîné et ré-entraînable qui traite l'image en une seule fois, en la découpant en plusieurs parties et en prédisant des bounding box (localisation de l'objet cherché dans l'image) et leur probabilité. 
+
+L'évaluation des performances du modèle peut se faire sur différentes métriques, notamment le F1-score et la mAP (mean Average Precision), métrique spécifique aux modèles de détection. Pour comparer différents modèles (différentes paramétrisations de YoloV5), Wandb est une interface très agréable :  
+
+![image](https://user-images.githubusercontent.com/38078432/188439802-478dd008-e62b-4cdf-b36c-3c70e3e6bad1.png)
+
+Le modèle choisi ici a des performances relativement intéressantes, d'autant plus que, rappelons le, nous entrainons un modèle à détecter des défauts non annotés dans toutes les images d'entrainement :
+
+![image](https://user-images.githubusercontent.com/38078432/188442882-bc05e8fe-79ea-4000-b288-4a835362731a.png)
+
+### Déploiement 
+
+Pour finir, nous proposons d'utiliser le modèle choisi pour détecter des défauts de route sur de nouvelles photos sélectionnées par l'utilisateur. Pour cela, nous avons utilisé Gradio : 
+
+![image](https://user-images.githubusercontent.com/38078432/188445700-8c36c831-6cf5-4441-9d88-33a2af796fc4.png)
+
 ----
 
 ## 5. Informations
@@ -82,6 +98,8 @@ Les notebooks ont été développés avec [Google Colab](https://colab.research.
 YoloV5 est disponible [ici](https://github.com/ultralytics/yolov5) et YoloV7 [ici](https://github.com/WongKinYiu/yolov7). 
 
 Wandb est disponible [ici](https://wandb.ai/site).
+
+L'information sur Gradio est disponible [ici](https://gradio.app/).
 
 ### Auteurs & contributeurs
 
