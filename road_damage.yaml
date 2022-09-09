@@ -1,0 +1,9 @@
+train: /content/RoadDamageDataset/Train/
+val:  /content/RoadDamageDataset/Val/
+test: /content/RoadDamageDataset/Test/
+
+# number of classes
+nc: 11
+
+# class names
+names: ["Longitudinal Crack","Transverse Crack", "Aligator Crack","Pothole", "Crosswalk/Whiteline blur", "Manhole lid/plate", "6","7","8","9","Others"]
