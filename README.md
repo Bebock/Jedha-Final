@@ -1,4 +1,3 @@
-[Lien vers la video](https://share.vidyard.com/watch/TemZp8VJ8SNJGQayv2nk2Z?)
 
 # Détection de défauts sur les routes :  Road Damage Detection Challenge
 
